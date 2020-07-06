@@ -1,0 +1,227 @@
+%form-secondary-font {
+  color: $description-text-color;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  position: absolute;
+  top: 0px;
+  left: 42px;
+  pointer-events: none;
+}
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.modal-form {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  width: 450px;
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
+  display: flex;
+  background-color: $primary-background-color;
+  flex-direction: column;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  & * {
+    text-transform: none;
+  }
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: $primary-background-color;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  background: $primary-background-color url(../images/close-modal.svg) no-repeat
+    center;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+.form-slogan {
+  display: block;
+  margin: 0px 40px 30px 40px;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $black;
+  text-transform: none;
+}
+.form-label {
+  bottom: 0px;
+}
+.formfield {
+  position: relative;
+  display: block;
+  height: 40px;
+  margin-bottom: 28px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.icon-element {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  transform: translate(-50%, -50%);
+  fill: $primary-text-color;
+  .formfield:focus-within & {
+    fill: $accent-color;
+  }
+}
+.area {
+  position: absolute;
+  left: 0px;
+  width: 370px;
+  @media screen and (min-width: 1200px) {
+    width: 448px;
+  }
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 18px 12px 42px;
+  outline: none;
+  .formfield:focus-within & {
+    border-color: $accent-color;
+  }
+}
+.form-advice {
+  @extend %form-secondary-font;
+}
+.formfield:focus-within .form-advice,
+.area:not(:placeholder-shown) ~ .form-advice {
+  color: $accent-color;
+  top: -32px;
+  left: 16px;
+}
+.commentfield {
+  width: 370px;
+  @media screen and (min-width: 1200px) {
+    width: 448px;
+  }
+  height: 120px;
+  display: block;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.commentfield:focus-within #comment {
+  border-color: $accent-color;
+}
+.commentfield:focus-within #comment-advice {
+  top: -16px;
+  color: $accent-color;
+}
+#comment:not(:placeholder-shown) ~ #comment-advice {
+  top: -16px;
+  color: $accent-color;
+}
+#comment {
+  width: 370px;
+  @media screen and (min-width: 1200px) {
+    width: 448px;
+  }
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  resize: none;
+  position: relative;
+}
+#comment-advice {
+  content: 'Комментарий';
+  z-index: 2;
+  top: 12px;
+  left: 16px;
+  @extend %form-secondary-font;
+  .commentfield:focus-within & {
+    color: $accent-color;
+    top: -16px;
+  }
+}
+#comment-advice {
+  position: absolute;
+  color: $description-text-color;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  left: 16px;
+  pointer-events: none;
+}
+.agreement {
+  width: 370px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-left: 30px;
+  @media screen and (min-width: 1200px) {
+    margin-left: 52px;
+    width: 424px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.agree {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+.agree-label {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  letter-spacing: 0.03em;
+  color: $black;
+}
+.agree-label::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 3.5px;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid $primary-text-color;
+  border-radius: 2px;
+}
+.agree:checked ~ .agree-label::before {
+  background: $accent-color url(../images/tick.svg) no-repeat center;
+  border-color: transparent;
+}
+.contract {
+  text-decoration: underline;
+  color: $accent-color;
+}
+.form-submit {
+  @extend %button;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+.social-list {
+  padding-left: 0;
+  display: flex;
+  list-style: none;
+}
+@mixin social-link($color) {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: $color;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  & + & {
+    margin-left: 10px;
+  }
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+.social-network {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  &:hover .icon,
+  &:hover .icon {
+    fill: white;
+  }
+}
+.icon {
+  display: inline;
+  margin: auto;
+  border: none;
+  fill: $icon-color;
+  .footer & {
+    fill: white;
+  }
+}

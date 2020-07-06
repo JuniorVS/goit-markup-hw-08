@@ -1,0 +1,65 @@
+@media screen and (max-width: 1199px) {
+  .our-work {
+    display: none;
+  }
+}
+%img {
+  @extend %secondary-header;
+  @extend %link;
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background-color: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  pointer-events: none;
+}
+.our-work {
+  @extend %section;
+  flex-wrap: wrap;
+}
+.ocuupation-list {
+  display: flex;
+  justify-content: space-between;
+}
+.occupation {
+  position: relative;
+  display: inline-flex;
+  width: 370px;
+  height: 294px;
+
+  &-link {
+    height: 100%;
+    width: 100%;
+  }
+  &-image {
+    width: 370px;
+    height: 294px;
+  }
+  &:nth-of-type(1)::before {
+    content: 'Десктопные приложения';
+    @extend %img;
+  }
+  &:nth-of-type(2)::before {
+    content: 'Мобильные приложения';
+    @extend %img;
+  }
+  &:nth-of-type(3)::before {
+    content: 'Дизайнерские решения';
+    @extend %img;
+  }
+  &:focus-within &::before {
+    color: $accent-color;
+  }
+}
+.occupation-text {
+  @extend %secondary-header;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: inline-block;
+  background-color: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  text-align: center;
+}

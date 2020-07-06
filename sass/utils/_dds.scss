@@ -1,0 +1,46 @@
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1200px) {
+}
+<header class="page-header">
+      <div class="page-container">
+
+            <a href="./index.html" class="logo"><span class="logo-accent">Web</span> Studio</a>
+
+            <button type="button" class="mobile__menu__button is-open" aria-expanded="false" aria-controls="menu-container" data-menu-button="">
+              <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+                <use class="icon-cross" href="./images/symbol-defs.svg#icon-icon-menu_mobile"></use>
+                <use class="icon-menu" href="./images/sprite.svg#close"></use>
+              </svg>
+            </button>
+
+            <div class="menu-container" id="menu-container" data-menu="">
+
+              <nav class="navigation">
+                <ul class="site-nav list">
+                  <li class="site-nav-li"><a href="./index.html" class="link current">Студия</a></li>
+                  <li class="site-nav-li"><a href="./portfolio.html" class="link">Портфолио</a></li>
+                  <li class="site-nav-li"><a href="" class="link">Контакты</a></li>
+                </ul>
+              </nav>
+
+              <ul class="email-and-phone">
+                <li class="email-and-phone--item">
+                  <a href="" target="_blank" class="email" title="Ссылка на нашу почту">
+                    <svg class="icon-envelope">
+                      <use href="./images/symbol-defs.svg#icon-envelope"></use>
+                    </svg>Info@devstudio.com</a>
+                </li>
+
+                <li class="email-and-phone--item">
+                  <a href="tel:+380961111111" class="phone">
+                    <svg class="icon-phone">
+                      <use href="./images/symbol-defs.svg#icon-phone"></use>
+                    </svg>+38 096 111 11 11</a>
+                </li>
+              </ul>
+
+            </div>
+
+      </div>
+    </header>
